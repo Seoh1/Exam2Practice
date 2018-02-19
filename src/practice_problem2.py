@@ -56,6 +56,12 @@ def run_test_practice_problem2a():
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
 
+    #Test 1
+    expected = [8, 16, 11, -14, 14]
+    actual = practice_problem2a([2,10,5,-20,8], 6)
+    print()
+    print('Test 1 expected:', expected)
+    print('Test 1 actual:', actual)
 
 def practice_problem2a(sequence, delta):
     """
@@ -83,7 +89,10 @@ def practice_problem2a(sequence, delta):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
-
+    new = []
+    for k in range(len(sequence)):
+        new.append(sequence[k] + delta)
+    return
 
 def run_test_practice_problem2b():
     """ Tests the   practice_problem2b  function. """
@@ -177,8 +186,11 @@ def practice_problem2b(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
-
-
+    new = ''
+    for k in range (len(sequence)):
+        if len(sequence[k]) > 0:
+            new += sequence[k][0]
+        return new
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------

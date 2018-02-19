@@ -164,6 +164,10 @@ def practice_problem3a(circles):
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
 
+    product = 1
+    for k in range(len(circles)):
+        product *= circles[k].center.x
+    return product
 
 def run_test_practice_problem3b():
     """ Tests the    practice_problem3b    function. """
@@ -279,6 +283,10 @@ def practice_problem3b(sequence):
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
 
+    for k in range(len(sequence)- 1):
+        if sequence[len(sequence)-1] == sequence[k]:
+            return True
+    return False
 
 def run_test_practice_problem3c():
     """ Tests the    practice_problem3c    function. """
@@ -361,7 +369,11 @@ def practice_problem3c(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
-
+    list = []
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            list.append(k)
+    return list
 
 def run_test_practice_problem3d():
     """ Tests the    practice_problem3d    function. """
@@ -444,6 +456,10 @@ def practice_problem3d(sequence):
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ####################################################################
 
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            return k
+    return -1
 
     ####################################################################
     # TODO: 6. Just ABOVE this TODO, you should have implemented
@@ -461,6 +477,10 @@ def practice_problem3d(sequence):
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ####################################################################
 
+    list = practice_problem3c(sequence)
+    if len(list) > 0:
+        return list[0]
+    return 1
 
 def run_test_practice_problem3e():
     """ Tests the    practice_problem3e    function. """
@@ -530,7 +550,11 @@ def practice_problem3e(sequence):
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
 
-
+    sum = 0
+    for k in range(len(sequence)):
+        if k % 2 == 0:
+            sum += sequence[k]
+    return sum
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
